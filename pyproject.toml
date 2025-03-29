@@ -1,0 +1,14 @@
+[project]
+name = "adventuregpt"
+version = "0.1.0"
+description = "A modern CLI text adventure game powered by GenAI"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.15.2",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.1.0",
+]
