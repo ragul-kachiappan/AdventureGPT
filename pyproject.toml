@@ -5,7 +5,8 @@ description = "A modern CLI text adventure game powered by GenAI"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "typer>=0.15.2",
+    "prompt-toolkit>=3.0.50",
+    "textual>=3.0.0",
 ]
 
 [dependency-groups]
