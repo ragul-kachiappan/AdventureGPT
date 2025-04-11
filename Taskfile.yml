@@ -1,12 +1,45 @@
 # https://taskfile.dev
 
 version: '3'
-
-vars:
-  GREETING: Hello, World!
+version: '3'
 
 tasks:
-  default:
+  build:
+    desc: "Build the Docker containers"
     cmds:
-      - echo "{{.GREETING}}"
-    silent: true
+      - docker-compose build
+
+  up:
+    desc: "Start the Docker containers"
+    cmds:
+      - docker-compose up -d
+
+  down:
+    desc: "Stop the Docker containers"
+    cmds:
+      - docker-compose down
+
+  logs:
+    desc: "View logs for the app container"
+    cmds:
+      - docker logs -f colossal_adventure
+
+  attach:
+    desc: "Attach to the CLI container"
+    cmds:
+      - docker attach colossal_adventure
+
+  shell:
+    desc: "Open a shell in the app container"
+    cmds:
+      - docker exec -it colossal_adventure /bin/bash
+
+  clean:
+    desc: "Remove all stopped containers and unused images"
+    cmds:
+      - docker system prune -f
+
+  rebuild:
+    desc: "Rebuild the Docker containers without cache"
+    cmds:
+      - docker-compose build --no-cache
