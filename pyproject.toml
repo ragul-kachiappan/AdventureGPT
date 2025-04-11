@@ -5,8 +5,19 @@ description = "A modern CLI text adventure game powered by GenAI"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "asyncpg>=0.30.0",
+    "chromadb>=1.0.4",
+    "markdown-it-py>=3.0.0",
+    "platformdirs>=4.3.6",
     "prompt-toolkit>=3.0.50",
+    "pydantic>=2.11.3",
+    "redis>=5.2.1",
+    "rich>=13.9.4",
+    "starlette>=0.45.3",
     "textual>=3.0.0",
+    "tortoise-orm>=0.24.2",
+    "uvicorn>=0.34.0",
+    "wcwidth>=0.2.13",
 ]
 
 [dependency-groups]
