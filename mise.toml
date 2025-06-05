@@ -9,5 +9,5 @@ script = "source .venv/bin/activate"
 shell = "bash"
 script = "deactivate"
 
-[tools]
-python = "3.12.8"
+[settings]
+python.uv_venv_auto = true

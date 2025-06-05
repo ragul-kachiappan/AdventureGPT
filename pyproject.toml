@@ -8,6 +8,7 @@ dependencies = [
     "asyncpg>=0.30.0",
     "chromadb>=1.0.4",
     "markdown-it-py>=3.0.0",
+    "ollama>=0.4.8",
     "platformdirs>=4.3.6",
     "prompt-toolkit>=3.0.50",
     "pydantic>=2.11.3",

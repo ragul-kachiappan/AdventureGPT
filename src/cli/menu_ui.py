@@ -1,9 +1,14 @@
+import asyncio
+import sys
+
 from rich.style import Style
 from rich.text import Text
 from textual import events
 from textual.app import App, ComposeResult
 from textual.containers import Center, Container
 from textual.widgets import Button, Footer, Header, Static
+
+from cli.repl import start_repl
 
 
 class MenuButton(Button):
@@ -57,22 +62,28 @@ class GameMenu(App):
         )
         yield Footer()
 
-    def on_button_pressed(self, event: Button.Pressed) -> None:
+    async def on_button_pressed(self, event: Button.Pressed) -> None:
         """Handle button press events"""
         button_id = event.button.id
         if button_id == "new-game":
-            self.notify("Starting new game...", title="Game")
+            self.exit()
+            # Start the REPL after exiting the menu
+            await asyncio.create_task(start_repl())
         elif button_id == "load-game":
             self.notify("Loading game...", title="Game")
+            # TODO: Implement game loading
         elif button_id == "options":
             self.notify("Opening options...", title="Game")
+            # TODO: Implement options menu
         elif button_id == "exit":
             self.exit()
+            sys.exit(0)
 
     def on_key(self, event: events.Key) -> None:
         """Handle keyboard events"""
         if event.key == "escape":
             self.exit()
+            sys.exit(0)
 
 
 def run_menu():
