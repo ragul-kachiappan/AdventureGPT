@@ -1,43 +1,18 @@
-# AdventureGPT
+# Colossal Cave Adventure - 2026 Edition
 
-A modern CLI text adventure game powered by GenAI. This project aims to recreate the classic text-based adventure experience with modern enhancements and AI-driven interactions.
+A modern rendition of classic CLI based text adventure game "Colossal Cave Adventure" with added AI dynamism.
 
-## Tech Stack
+> Update: The project is being revived as of early 2026.
 
-- **CLI Interface**: Built with Textual and Prompt Toolkit for a rich text user interface.
-- **Backend**: Starlette for handling internal API requests.
-- **Database**: PostgreSQL with asyncpg and Tortoise ORM for data management.
-- **Caching**: Redis for caching mechanisms.
-- **Vector Database**: ChromaDB for storing embeddings and supporting AI features.
-- **Containerization**: Docker and Docker Compose for environment management.
-
-## How to Run the Project
-
-1. **Build the Docker containers**:
-   ```bash
-   docker-compose build
-   ```
-
-2. **Start the Docker containers**:
-   ```bash
-   docker-compose up -d
-   ```
-
-3. **Attach to the CLI interface**:
-   ```bash
-   docker attach colossal_adventure
-   ```
-
-4. **Stop the Docker containers**:
-   ```bash
-   docker-compose down
-   ```
-
-## Pending Tasks
-
-- [ ] Fix terminal issue
-- [ ] Implement game logic and mechanics
-- [ ] Add AI-driven interactions
-- [ ] Enhance CLI interface with additional commands
-- [ ] Write unit tests for core components
-- [ ] Improve documentation and add usage examples
+Plan:
+- Implementation of original cli game in python, But with modifications.
+Inspiration: https://github.com/brandon-rhodes/python-adventure/
+- Python packing steps for eventual publish to PyPI.
+- Current AI (with Ollama) plans
+   - Processing of dynamic inputs
+   - Dynamic NPCs that conform to the story
+   - Guided generation/modifications on scenes while still keeping the goal and general gameplay consistent
+- Retrieval with 
+- Clean TUI with textual and prompt_toolkit
+- Persistence will probably be in a local sqlite file or local chroma db
+- Future plan to may be implement on full knowledge graph
