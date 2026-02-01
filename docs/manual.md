@@ -1,12 +1,12 @@
-# AdventureGPT
+# AdventureGPT User Manual
 
-A modern rendition of classic CLI based text adventure game "Colossal Cave Adventure" with added AI dynamism (Phase 2).
-Currently Phase 1 (Original Game Engine & TUI) is complete.
+## Introduction
+AdventureGPT is a modern reimagining of the classic "Colossal Cave Adventure" text adventure game. Phase 1 provides the core engine with a classic CLI and a modern TUI interface.
 
 ## Prerequisites
 - **OS**: Linux (tested), Mac (likely works), Windows (via WSL recommended).
 - **Python**: 3.13 or higher.
-- **Tooling**: [uv](https://github.com/astral-sh/uv) (Recommended).
+- **Tooling**: [uv](https://github.com/astral-sh/uv) (Recommended for dependency management).
 
 ## Installation
 
@@ -28,6 +28,8 @@ Currently Phase 1 (Original Game Engine & TUI) is complete.
 
 ## How to Play
 
+## How to Play
+
 Launch the game (TUI mode):
 
 ```bash
@@ -41,14 +43,15 @@ uv run adventuregpt
     - `/help`: Show command assistance.
     - `/learn`: Learn about the project.
 
-## Controls & Commands
+### Controls & Commands
+Once in the game, you can use natural language commands. The parser currently supports basic two-word commands (Verb + Noun).
 
 *   **Move**: `go north`, `go in`, `south`, `up`, `down`, etc.
 *   **Look**: `look`, `l` (Redescribe the current room).
 *   **Inventory**: `inventory`, `i` (Check what you are carrying).
 *   **Quit**: `quit`, `exit` (Save and close the game).
 
-## Game State & Persistence
+### Game State & Uninstalling
 The game automatically saves your progress to `adventure.db` in your user application directory (e.g., `~/.config/adventuregpt` or `~/.local/share/adventuregpt` on Linux).
 
 **Cleaning up**:
@@ -56,23 +59,4 @@ To completely remove all game data (saves, logs), run:
 ```bash
 uv run adventuregpt nuke
 ```
-This is recommended before uninstalling the CLI tool.
-
-## Roadmap
-
-### Phase 1: Original Game Implementation (Completed)
-- [x] Tech stack: Python 3.13, Typer, Textual, Prompt_toolkit, SQLite
-- [x] Core Engine & Parser
-- [x] TUI implementation
-- [x] Persistence (XDG standard)
-
-### Phase 2: AI Enhancements (Planned)
-- [ ] Processing of dynamic inputs
-- [ ] Dynamic NPCs that conform to the story
-- [ ] Guided generation/modifications on scenes
-- [ ] Knowledge graph implementation
-
-## Documentation
-For more details, check the `docs/` directory:
-- [Manual](docs/manual.md)
-- [Implementation Report](docs/implementation_report.md)
+This is recommended before uninstalling the CLI tool, as `pip uninstall` will not remove these files.
